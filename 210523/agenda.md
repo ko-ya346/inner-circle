@@ -1,31 +1,49 @@
 # command操作
 
-## いまいるpathを確認 
-- pwd
+### いまいるpathを確認 
+```
+pwd
+```
 
-## いまいる場所にあるファイルを確認
-- ls
+### いまいる場所にあるファイルを確認
+```
+ls
+```
 
-## ドットファイルも含めて確認
-- ls -a
+### ドットファイルも含めて確認
+```
+ls -a
+```
 
-## ディレクトリ作成
-- mkdir 210523
+### ディレクトリ作成
+```
+mkdir 210523
+```
 
-## ちゃんとディレクトリが出来たかな？
-- ls
+### ちゃんとディレクトリが出来たかな？
+```
+ls
+```
 
-## 作ったディレクトリに移動
-- cd 210523
+### 作ったディレクトリに移動
+```
+cd 210523
+```
 
-## pythonファイルを作ってみる
-- echo "print('hello world')" >> hello.py
+### pythonファイルを作ってみる
+```
+echo "print('hello world')" >> hello.py
+```
 
-## .pyファイルの中身を出力
-- cat hello.py
+### .pyファイルの中身を出力
+```
+cat hello.py
+```
 
-## pythonファイル実行
-- python hello.py
+### pythonファイル実行
+```
+python hello.py
+```
 
 # git
 ## gitとは  
@@ -35,8 +53,11 @@
 - IT系だとほぼ使ってる  
 
 ## 準備（dockerを使う場合、ローカルで作業する場合は必要なし）
-> docker build -t git-vim .  
-> docker run -it --name test-git git-vim /bin/bash
+
+```
+docker build -t git-vim .  
+docker run -it --name test-git git-vim /bin/bash
+```
 
 ## ssh接続
 
@@ -45,15 +66,21 @@
 1. githubにアカウント作る  
 2. sshでkeyを作る  
 
-- cd ~
-- ssh-keygen -t rsa
-- Enterを3連打
+```
+cd ~
+ssh-keygen -t rsa
+```
+
+- その後、Enterを3連打
 - .sshというディレクトリ内のid_rsa.pubの中身(公開鍵)をコピー
 
 3. 公開鍵をgithubに保存
 4. 接続確認
 
-- ssh -T git@github.com
+```
+ssh -T git@github.com
+```
+
 5. Hiとか言われたら完了
 
 > https://qiita.com/shizuma/items/2b2f873a0034839e47ce
@@ -65,13 +92,16 @@
 3. 新規に作ったときに表示されるコマンド通りにやる
 
 ## よく使うコマンド
-- git add
-- git commit -m 
-- git push
-- git pull
-- git clone
-- git status
-- git diff
+
+```
+git add
+git commit -m 
+git push
+git pull
+git clone
+git status
+git diff
+```
 
 ## 気をつけること
 - 個人情報などはアップしない
@@ -81,10 +111,17 @@
 
 ## 複数人で開発するとき（時間があればやる）
 1. innercircleをclone  
-- git clone https://github.com/ko-ya346/inner-circle.git
+
+```
+git clone https://github.com/ko-ya346/inner-circle.git
+```
 
 2. ブランチを作って開発する  
-- git checkout 
+
+```
+git checkout 
+```
+
 3. commitしてmerge request送る  
 
 # docker
@@ -107,21 +144,41 @@
 
 1. pythonのイメージを持ってくる
 
-- docker pull python:latest  
-- docker images
+```
+docker pull python:latest  
+docker images
+```
 
 2. pythonのイメージからコンテナを作成して中に入る
-- docker run -it --name test-python python /bin/bash  
+
+```
+docker run -it --name test-python python /bin/bash  
+```
 
 3. 中で色々やる  
 4. コンテナを終了
-- exit
+
+```
+exit
+```
+
 5. コンテナを確認
-- docker ps -a
+
+```
+docker ps -a
+```
+
 6. 停止してるコンテナをもっかい動かす
-- docker start 
+
+```
+docker start 
+```
+
 7. 起動中のコンテナに入る
-- docker exec -it [] bash
+
+```
+docker exec -it [] bash
+```
 
 ## ほかに出来ること 
 - dockerfileを書くと自分で好き勝手imageを作れる
