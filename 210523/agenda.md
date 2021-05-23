@@ -1,4 +1,21 @@
-# command操作
+# はじめに（心構え的な）
+- 今日やることは初めての人にとってめちゃくちゃむずい
+    - 実際僕はgitの初回設定、dockerの起動に数日溶かしてる
+- どんなことが出来るかふんわり理解できればOK、全貌を理解するのは無理!!!!
+- 使いながら徐々に慣れよう、「こんなことが出来ればなぁ」というのは大体誰かが用意してくれてる
+    - 無かったらチャンス！自分で作ろう
+ 
+
+# commandとは
+- 黒画面でポチポチするやつ（cui）⇔  gui
+- マウス操作が不要になるので慣れると作業スピードup
+- ターミナルの種類によってコマンドが微妙に異なる
+
+
+### 標準シェルを確認
+```
+echo $SHELL
+```
 
 ### いまいるpathを確認 
 ```
@@ -43,6 +60,20 @@ cat hello.py
 ### pythonファイル実行
 ```
 python hello.py
+```
+
+## 知ってると便利かも
+- fish
+    - bashの完全上位互換
+- tmux
+    - 黒画面を分割できる
+- vim
+    - 最強エディタ
+    - VScodeよりもサクサクなので最近はこっちメインでやってる
+    - 公式チュートリアル 
+
+```
+vimtutor ja
 ```
 
 # git
@@ -94,13 +125,13 @@ ssh -T git@github.com
 ## よく使うコマンド
 
 ```
-git add
-git commit -m 
+git add [file name]
+git commit -m '[massage]'
 git push
-git pull
-git clone
+git pull [repositry url]
+git clone [repositry url]
 git status
-git diff
+git diff [file name]
 ```
 
 ## 気をつけること
@@ -119,7 +150,7 @@ git clone https://github.com/ko-ya346/inner-circle.git
 2. ブランチを作って開発する  
 
 ```
-git checkout 
+git checkout [branch name]
 ```
 
 3. commitしてmerge request送る  
@@ -171,13 +202,13 @@ docker ps -a
 6. 停止してるコンテナをもっかい動かす
 
 ```
-docker start 
+docker start [container name]
 ```
 
 7. 起動中のコンテナに入る
 
 ```
-docker exec -it [] bash
+docker exec -it [container name] bash
 ```
 
 ## ほかに出来ること 
